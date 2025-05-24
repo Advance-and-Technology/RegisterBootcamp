@@ -13,9 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h3w)*oes-7c(q68$j27_oq%wf5d@xz!bu_02!#e&pzi0a7x8w#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'advance-and-technology.github.io/RegisterBootcamp/', 'localhost']
 
 
 # Application definition
@@ -33,9 +34,8 @@ INSTALLED_APPS = [
 
 ]
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'build')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build')]
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -51,14 +51,16 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
+    'https://advance-and-technology.github.io/RegisterBootcamp/',
 ]
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+    "https://advance-and-technology.github.io/RegisterBootcamp/",
 
+]
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 ROOT_URLCONF = 'register.urls'
 REST_FRAMEWORK = {
