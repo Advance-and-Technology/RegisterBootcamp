@@ -1,12 +1,17 @@
 services:
   - type: web
-    name: django-backend
+    name: my-django-react-app
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn backend.wsgi:application
-    staticPublishPath: staticfiles
+    buildCommand: |
+      cd backend
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: |
+      cd backend
+      gunicorn backend.wsgi:application
+    staticPublishPath: backend/build
     envVars:
-      - key: DEBUG
-        value: false
-      - key: SECRET_KEY
-        generateValue: true
+      - key: DJANGO_SETTINGS_MODULE
+        value: backend.settings
+      - key: PYTHON_VERSION
+        value: 3.10
