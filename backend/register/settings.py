@@ -51,7 +51,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    'https://advance-and-technology.github.io/RegisterBootcamp/',
+    'https://advance-and-technology.github.io',
 ]
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
