@@ -94,8 +94,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Archivos adicionales para desarrollo (opcional)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build'),
-] if DEBUG else []
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Internacionalización
 LANGUAGE_CODE = 'en-us'
