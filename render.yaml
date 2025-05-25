@@ -3,13 +3,12 @@ services:
     name: registerbootcamp
     runtime: python
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
-    startCommand: "gunicorn registro.wsgi:application"
-    staticPublishPath: backend/staticfiles
-
+    startCommand: "gunicorn register.wsgi:application"
+  
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: register.settings
       - key: SECRET_KEY
-        value: "hkgu#!$-&r@dz+3rt#8-k+2ikyjsrk#ld!3&u5^wdi$8!se^6_"
+        value: hkgu#!$-&r@dz+3rt#8-k+2ikyjsrk#ld!3&u5^wdi$8!se^6_
       - key: DEBUG
-        value: "false"
+        value: 'false'
