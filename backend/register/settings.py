@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Seguridad
 SECRET_KEY = os.getenv(
     'SECRET_KEY', 'hkgu#!$-&r@dz+3rt#8-k+2ikyjsrk#ld!3&u5^wdi$8!se^6_')
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'registerbootcamp.onrender.com']
 
 # Aplicaciones
