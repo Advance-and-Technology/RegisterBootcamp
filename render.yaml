@@ -1,17 +1,15 @@
 services:
   - type: web
-    name: my-django-react-app
+    name: registerbootcamp-backend
     env: python
-    buildCommand: |
-      cd backend
-      pip install -r requirements.txt
-      python manage.py collectstatic --noinput
-    startCommand: |
-      cd backend
-      gunicorn backend.wsgi:application
-    staticPublishPath: backend/build
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "gunicorn register.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: backend.settings
+        value: register.settings
       - key: PYTHON_VERSION
         value: 3.10
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
