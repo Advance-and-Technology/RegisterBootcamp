@@ -102,7 +102,7 @@ const RegistrationPage: React.FC = () => {
             phone_number_guardian: formData.phone_number_guardian || null,
         };
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/register/', cleanedData, {
+            const response = await axios.post('https://registerbootcamp.onrender.com/api/register/', cleanedData, {
                 headers: {
                     "Content-Type": "application/json"
                 }
