@@ -1,15 +1,15 @@
 services:
   - type: web
-    name: registerbootcamp-backend
-    env: python
-    buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "gunicorn register.wsgi:application"
+    name: registerbootcamp
+    runtime: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn registro.wsgi:application"
+    staticPublishPath: backend/staticfiles
+
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: register.settings
-      - key: PYTHON_VERSION
-        value: 3.10
       - key: SECRET_KEY
-        generateValue: true
+        value: "hkgu#!$-&r@dz+3rt#8-k+2ikyjsrk#ld!3&u5^wdi$8!se^6_"
       - key: DEBUG
-        value: "False"
+        value: "false"

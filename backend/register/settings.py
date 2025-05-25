@@ -6,7 +6,8 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Seguridad
-SECRET_KEY = os.getenv('SECRET_KEY', 'tu-clave-insegura-para-desarrollo')
+SECRET_KEY = os.getenv(
+    'SECRET_KEY', 'hkgu#!$-&r@dz+3rt#8-k+2ikyjsrk#ld!3&u5^wdi$8!se^6_')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'registerbootcamp.onrender.com']
 
@@ -25,8 +26,9 @@ INSTALLED_APPS = [
 
 # Middleware
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
